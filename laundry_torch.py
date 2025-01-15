@@ -62,12 +62,6 @@ class HybridModel(nn.Module):
         output = self.fc(combined)
         return output
 
-# 데이터 예제 생성 (랜덤)
-batch_size = 16
-image_data = torch.randn(batch_size, 3, 64, 64)  # 16개의 이미지 데이터 (64x64x3)
-weight_data = torch.randn(batch_size, 1)         # 16개의 무게 데이터
-labels = torch.randint(0, 4, (batch_size,))      # 4개의 클래스 레이블
-
 # 모델, 손실 함수, 최적화 정의
 model = HybridModel()
 focal_loss = FocalLoss(alpha=1, gamma=2)
